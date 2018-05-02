@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Bootstrap Theme Simply Me</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <style>
+            body {
+                font: 20px Montserrat, sans-serif;
+                line-height: 1.8;
+                color: #f5f6f7;
+            }
+            p {font-size: 16px;}
+            .margin {margin-bottom: 45px;}
+            .bg-1 { 
+                background-color: #1abc9c; /* Green */
+                color: #ffffff;
+            }
+            .bg-2 { 
+                background-color: #474e5d; /* Dark Blue */
+                color: #ffffff;
+            }
+            .bg-3 { 
+                background-color: #ffffff; /* White */
+                color: #555555;
+            }
+            .bg-4 { 
+                background-color: #2f2f2f; /* Black Gray */
+                color: #fff;
+            }
+            .container-fluid {
+                padding-top: 70px;
+                padding-bottom: 70px;
+            }
+            .navbar {
+                padding-top: 15px;
+                padding-bottom: 15px;
+                border: 0;
+                border-radius: 0;
+                margin-bottom: 0;
+                font-size: 12px;
+                letter-spacing: 5px;
+            }
+            .navbar-nav  li a:hover {
+                color: #1abc9c !important;
+            }
+        </style>
+    </head>
+
+    <body>
+        <nav class="navbar navbar-default">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>                        
+                    </button>
+                    <a class="navbar-brand" href="#">Dario Mendoza</a>
+                </div>
+                <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#edu">Educacion</a></li>
+                    <li><a href="#skill">Habilidades</a></li>
+                    <li><a href="#con">Contacto</a></li>
+                </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- First Container -->
+        <div class="container-fluid bg-1 text-center">
+        <h3 class="margin">Dario Mendoza</h3>
+        <!--<img src="bird.jpg" class="img-responsive img-circle margin" style="display:inline" alt="Bird" width="350" height="350">-->
+        <h3>
+            Nombre completo: Dario Antonio Mendoza Mejia<br>
+            Edad: 20<br>
+            Sexo: M<br>
+            Direccion: El Sauce<br>
+        </h3>
+        </div>
+
+        <!-- Second Container -->
+        <div class="container-fluid bg-2 text-center">
+            <h3 class="margin">Educacion</h3>
+            <p>
+                Secundaria: Instituto Marista La Inmaculada<br>
+                Estudios: Tecnico en Informatica y Computacion<br>
+                Universidad: UNITEC<br>
+                Carrera: Ingenieria en Sistemas computacionales<br>
+            </p>
+        </div>
+
+        <!-- Third Container (Grid) -->
+        <div class="container-fluid bg-3 text-center">    
+        <h3 class="margin">Habilidades</h3><br>
+        <div class="row">
+            <div class="col-sm-4">
+                <p>
+                    <h4>Lenguajes:</h4><br>
+                    Ingles: 70%<br>
+                    Mandarin: 10%<br>
+                </p>
+            </div>
+
+            <div class="col-sm-4"> 
+                <p>
+                    <h4>Programacion:</h4><br>
+                    <ul>
+                        <li>C++</li>
+                        <li>C#</li>
+                        <li>Basic.Net</li>
+                        <li>FoxPro 9</li>
+                        <li>Java</li>
+                    </ul>
+                </p>
+            </div>
+
+            <div class="col-sm-4"> 
+                <p>
+                    <h4>Diseño web:</h4><br>
+                    <ul>
+                        <li>Html</li>
+                        <li>Css</li>
+                        <li>PHP</li>
+                        <li>JavaScript</li>
+                    </ul> 
+                </p>
+            </div>
+        </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="container-fluid bg-4 text-center">
+            <p dir="con">Contacto: <br>
+                Telefono: 9680-3004<br>
+                Email: dmendoza3@unitec.edu<br>
+                Usted ha visitado <l id="result">0</l> esta pagina.
+            </p>
+
+        </footer>
+
+        <script>
+            // Check browser support
+            if (typeof(Storage) !== "undefined") {
+                document.getElementById("result").innerHTML = localStorage.getItem("visit");
+                
+                localStorage.setItem("visit", parseInt(document.getElementById("result").innerHTML) + 1);
+                
+            } else {
+                document.getElementById("result").innerHTML = "Sorry, your browser does not support Web Storage...";
+            }
+        </script>
+    </body>
+</html>
