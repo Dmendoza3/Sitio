@@ -20,6 +20,26 @@
             </ol>
         </div>   
         
-        <script src="script.js"></script>
+        <script>
+            new Vue({
+                el: '#app',
+                data: {
+                    message:'Hello',
+                todos: [
+                    { text: 'Learn JavaScript' },
+                    { text: 'Learn Vue' },
+                    { text: 'Build something awesome' }
+                ]
+                },
+                methods: {
+                addMsg: function () {
+                    this.todos.push({ text: this.message });
+                },
+                delMsg: function () {
+                    
+                }
+                }
+            })
+        </script>
     </body>
 </html>     
